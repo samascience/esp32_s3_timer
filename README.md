@@ -43,34 +43,30 @@ A feature-packed MicroPython project for the **ESP32-C3 Supermini Development Bo
 ├── config.json.example  # Configuration template (rename to config.json)
 ├── case.scad            # Parametric OpenSCAD 3D model for laptop-style enclosure
 ├── stl/                 # 3D Printable STL Files
-│   ├── case_base.stl    # Keyboard-style base chassis (holds ESP32-C3 PCB)
-│   └── case_lid.stl     # Laptop display bezel frame (holds 0.42" OLED)
+│   └── case_stand.stl   # Single-piece support-free angled desktop stand
 └── README.md            # Project documentation and setup guide
 ```
 
 ---
 
-## 🖨️ 3D Printable Laptop-Style Enclosure
+## 🖨️ 3D Printable Desktop Stand (100% Support-Free)
 
-A custom parametric **OpenSCAD model (`case.scad`)** is included so you can 3D print a miniature laptop-style case for your ESP32-C3 timer!
+A custom parametric **OpenSCAD model (`case.scad`)** is included so you can 3D print a desktop stand for your ESP32-C3 timer in under 15 minutes!
 
-* **Integrated Snap-Fit Hinge:** Features chamfered snap nubs and matching internal sockets—no extra pins, screws, or hardware needed!
-* **Ergonomic Mechanical Stop:** Includes a built-in 65° rear stopper so the display lid snaps in and rests solidly upright like a miniature laptop screen.
-* **USB-C Accessibility:** Rear cutouts for easy power cable access and side slots for reset button access.
+* **100% Support-Free Printing:** Designed with draft angles under 45° so it prints directly flat on any 3D printer without any support material.
+* **Ergonomic 60° Viewing Angle:** Elevates and slants the screen towards your eyes for desk viewing.
+* **Fast & Light:** Prints in ~15 minutes using ~8 grams of filament.
+* **Plug & Play:** Slide the ESP32-C3 board right into the front slot; rear cutout allows easy USB-C cable access and bottom hole enables quick removal.
 
-### Slicing & Printing STL Files
+### Slicing & Printing
 
-Pre-compiled, manifold 3D printable STL files are located in the `stl/` folder:
-1. `stl/case_base.stl`: Print flat on bed (Layer height: 0.2mm, Infill: 20%).
-2. `stl/case_lid.stl`: Print flat with front screen bezel facing down/up.
+The pre-compiled STL file is located in the `stl/` directory:
+* `stl/case_stand.stl`: Print flat on the print bed (Layer height: 0.2mm, Infill: 15–20%, **Supports: Disabled**).
 
-Assembly: Simply align the display lid with the base unit hinge posts and gently press until the chamfered nubs **snap** into place!
-
-To re-compile the OpenSCAD model from the command line:
+To re-compile from command line:
 
 ```bash
-openscad -o stl/case_base.stl -D 'render_part="base"' case.scad
-openscad -o stl/case_lid.stl -D 'render_part="lid"' case.scad
+openscad -o stl/case_stand.stl -D 'render_part="stand"' case.scad
 ```
 
 ---
