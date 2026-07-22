@@ -41,7 +41,36 @@ A feature-packed MicroPython project for the **ESP32-C3 Supermini Development Bo
 ├── sh1106.py            # MicroPython driver for SH1106 I2C OLED display
 ├── index.html           # Embedded dark-mode web portal dashboard
 ├── config.json.example  # Configuration template (rename to config.json)
+├── case.scad            # Parametric OpenSCAD 3D model for laptop-style enclosure
+├── stl/                 # 3D Printable STL Files
+│   ├── case_base.stl    # Keyboard-style base chassis (holds ESP32-C3 PCB)
+│   ├── case_lid.stl     # Laptop display bezel frame (holds 0.42" OLED)
+│   └── case_hinge.stl   # Interlocking hinge pin
 └── README.md            # Project documentation and setup guide
+```
+
+---
+
+## 🖨️ 3D Printable Laptop-Style Enclosure
+
+A custom parametric **OpenSCAD model (`case.scad`)** is included so you can 3D print a miniature laptop-style case for your ESP32-C3 timer!
+
+* **Ergonomic Viewing Angle:** Holds the OLED display at an optimal 65° tilt like a mini laptop screen.
+* **USB-C Accessibility:** Cutouts at the rear allow easy power cable connection.
+* **Parametric Design:** Edit parameters inside `case.scad` to adjust wall thickness, screen tilt angle, or tolerances.
+
+### Slicing & Printing STL Files
+
+Pre-compiled, manifold 3D printable STL files are located in the `stl/` folder:
+1. `stl/case_base.stl`: Print flat on bed (Layer height: 0.2mm, Infill: 20%).
+2. `stl/case_lid.stl`: Print flat with screen cutout facing up.
+3. `stl/case_hinge.stl`: Print vertically or use a 2mm pin/paperclip.
+
+To re-compile the OpenSCAD model from the command line:
+
+```bash
+openscad -o stl/case_base.stl -D 'render_part="base"' case.scad
+openscad -o stl/case_lid.stl -D 'render_part="lid"' case.scad
 ```
 
 ---
