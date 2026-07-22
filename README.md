@@ -1,5 +1,11 @@
 # ESP32-C3 0.42" OLED Schedule Timer & Web Portal
 
+<p align="center">
+  <img src="assets/oled_display_preview.png" alt="OLED Display Preview" width="45%" />
+  &nbsp;&nbsp;
+  <img src="assets/web_portal_preview.png" alt="Web Portal Preview" width="48%" />
+</p>
+
 A feature-packed MicroPython project for the **ESP32-C3 Supermini Development Board** featuring an onboard **0.42-inch OLED display (SH1106 controller)**. It maintains real-time NTP synchronization, executes a **5-block customizable daily countdown schedule**, renders dynamically scaled numbers to maximize screen space, and hosts an asynchronous **dark-mode web dashboard** for real-time control and customizations.
 
 ---
