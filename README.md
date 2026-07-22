@@ -44,8 +44,7 @@ A feature-packed MicroPython project for the **ESP32-C3 Supermini Development Bo
 ├── case.scad            # Parametric OpenSCAD 3D model for laptop-style enclosure
 ├── stl/                 # 3D Printable STL Files
 │   ├── case_base.stl    # Keyboard-style base chassis (holds ESP32-C3 PCB)
-│   ├── case_lid.stl     # Laptop display bezel frame (holds 0.42" OLED)
-│   └── case_hinge.stl   # Interlocking hinge pin
+│   └── case_lid.stl     # Laptop display bezel frame (holds 0.42" OLED)
 └── README.md            # Project documentation and setup guide
 ```
 
@@ -55,16 +54,17 @@ A feature-packed MicroPython project for the **ESP32-C3 Supermini Development Bo
 
 A custom parametric **OpenSCAD model (`case.scad`)** is included so you can 3D print a miniature laptop-style case for your ESP32-C3 timer!
 
-* **Ergonomic Viewing Angle:** Holds the OLED display at an optimal 65° tilt like a mini laptop screen.
-* **USB-C Accessibility:** Cutouts at the rear allow easy power cable connection.
-* **Parametric Design:** Edit parameters inside `case.scad` to adjust wall thickness, screen tilt angle, or tolerances.
+* **Integrated Snap-Fit Hinge:** Features chamfered snap nubs and matching internal sockets—no extra pins, screws, or hardware needed!
+* **Ergonomic Mechanical Stop:** Includes a built-in 65° rear stopper so the display lid snaps in and rests solidly upright like a miniature laptop screen.
+* **USB-C Accessibility:** Rear cutouts for easy power cable access and side slots for reset button access.
 
 ### Slicing & Printing STL Files
 
 Pre-compiled, manifold 3D printable STL files are located in the `stl/` folder:
 1. `stl/case_base.stl`: Print flat on bed (Layer height: 0.2mm, Infill: 20%).
-2. `stl/case_lid.stl`: Print flat with screen cutout facing up.
-3. `stl/case_hinge.stl`: Print vertically or use a 2mm pin/paperclip.
+2. `stl/case_lid.stl`: Print flat with front screen bezel facing down/up.
+
+Assembly: Simply align the display lid with the base unit hinge posts and gently press until the chamfered nubs **snap** into place!
 
 To re-compile the OpenSCAD model from the command line:
 
